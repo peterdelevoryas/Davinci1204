@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.19)
 project(Davinci1204)
 
-add_executable(Davinci1204c main.cpp)
-target_compile_options(Davinci1204c PRIVATE -Wall -g -Og)
+set(COMPILER Davinci1204c)
+
+add_executable(${COMPILER} main.cpp)
+target_compile_options(${COMPILER} PRIVATE -Wall -g -Og)
+
+enable_testing()
+add_test(NAME Sanity COMMAND ${COMPILER} ${CMAKE_SOURCE_DIR}/test.dv)

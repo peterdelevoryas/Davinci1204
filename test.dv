@@ -1,0 +1,10 @@
+
+type int = i32;
+type string = *i8;
+
+func main(argc: int, argv: *string) -> int {
+    var x = 1;
+    var y = x;
+    x = 2;
+    return x
+}
